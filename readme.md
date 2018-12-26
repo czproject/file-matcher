@@ -22,9 +22,7 @@ composer require czproject/file-matcher
 
 use CzProject\FileMatcher\FileMatcher;
 
-$matcher = new FileMatcher;
-
-$matcher->matchMask($path, $masks[, $isPathDirectory]);
+FileMatcher::matchMask($path, $masks[, $isPathDirectory]);
 
 $masks = array(
 	'temp/*',
@@ -32,10 +30,10 @@ $masks = array(
 	'!.gitignore',
 );
 
-$matcher->matchMask('.git', $masks, TRUE); // returns TRUE
-$matcher->matchMask('.gitignore', $masks); // return FALSE
-$matcher->matchMask('temp/cache', $masks, TRUE); // returns TRUE
-$matcher->matchMask('log/2016', $masks, TRUE); // returns FALSE
+FileMatcher::matchMask('.git', $masks, TRUE); // returns TRUE
+FileMatcher::matchMask('.gitignore', $masks); // return FALSE
+FileMatcher::matchMask('temp/cache', $masks, TRUE); // returns TRUE
+FileMatcher::matchMask('log/2016', $masks, TRUE); // returns FALSE
 ```
 
 ------------------------------

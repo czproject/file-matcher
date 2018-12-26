@@ -11,7 +11,7 @@
 		 * @param  string[] patterns
 		 * @return bool
 		 */
-		public function matchMask($path, array $patterns, $isDir = FALSE)
+		public static function matchMask($path, array $patterns, $isDir = FALSE)
 		{
 			$res = FALSE;
 			$path = explode('/', ltrim($path, '/'));
